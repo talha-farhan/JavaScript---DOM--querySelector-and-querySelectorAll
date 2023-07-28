@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - DOM - Query Selector and Query Selector All</title>
+</head>
+<body>
+    <h1>JavaScript - DOM - Query Selector and Query Selector All</h1>
+
+    <h4>Things to Know</h4>
+    <ul>
+        <li>These methods help to target all selectors using a single name</li>
+        <li>The Document method querySelector() returns the first Element within the document that matches the specified selector, or group of selectors.</li>
+        <li>If no matches are found, null is returned.</li>
+        <li>A SYNTAX_ERR exception is reached if the selector(s) is invalid</li>
+    </ul>
+
+    <ul>
+        <li>The Document method querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.</li>
+        <li>The querySelectorAll() method returns a NodeList.</li>
+        <li>A SYNTAX_ERR exception is reached if the selector(s) is invalid</li>
+    </ul>
+
+    <h4>Syntax</h4>
+    <ul>
+        <li>document.querySelector("selectorName")</li>
+        <li>document.querySelectorAll("selectorName")</li>
+    </ul>
+
+    <h4 id="example">Examples</h4>
+    <div id="thorin" class="sample">
+        <p class="para">This is a sample paragraph</p>
+        <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cupiditate, officia alias necessitatibus hic reiciendis quasi debitis, minima pariatur at cumque sapiente eos dolor! Libero distinctio saepe ipsam nisi blanditiis.</p>
+        <p id="ceiling">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo odio molestias harum minima error quibusdam hic ipsam ea. Commodi eligendi delectus repellendus sed tempore incidunt porro enim amet reprehenderit itaque.</p>
+    </div>
+    <script>
+        var element;
+
+        element = document.querySelector("#thorin"); // # indicates that this is an id. Missing the indiator returns null
+        console.log(element);
+        element = document.querySelector("#ceiling").innerHTML; // We can get our desired values too
+        console.log(element);
+        element = document.querySelector(".para"); // . indicates that this is a class
+        console.log(element);
+        element = document.querySelector(".para").innerText;
+        console.log(element);
+        element = document.querySelector("ul"); // There is no indicator for a tag
+        console.log(element);
+
+        element = document.querySelectorAll(".para"); // Missing the indicator here returns an empty node list
+        console.log(element);
+        element = document.querySelectorAll("li"); // li's of references have not been included since these are written after the script tag
+        console.log(element);
+        element = document.querySelectorAll("li")[1].innerHTML;
+        console.log(element);
+        element = document.querySelectorAll(".sample p"); // An example of advanced selectors
+        console.log(element);
+    </script>
+
+    <h4>References</h4>
+    <ul>
+        <li>https://www.youtube.com/watch?v=Tmn1kTysDOQ&list=PL0b6OzIxLPbx-BZTaWu_AF7hsKo_Fvsnf&index=65&t=158s</li>
+        <li>https://www.w3schools.com/jsref/met_document_queryselector.asp</li>
+        <li>https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector</li>
+        <li>https://www.w3schools.com/jsref/met_document_queryselectorall.asp</li>
+        <li>https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll</li>
+    </ul>
+</body>
+</html>
